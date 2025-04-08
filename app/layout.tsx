@@ -2,7 +2,6 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClientLayout } from "@/components/client-layout";
 import { ClientProviders } from "@/components/client-providers";
 import { PurchaseProvider } from "@/context/purchase-context";
 
@@ -52,9 +51,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ClientProviders>
-          <PurchaseProvider>
-            <ClientLayout>{children}</ClientLayout>
-          </PurchaseProvider>
+          <PurchaseProvider>{children}</PurchaseProvider>
         </ClientProviders>
       </body>
     </html>
